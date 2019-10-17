@@ -14,32 +14,32 @@ public class ScenarioStepsOne {
 
 
     @Когда("выбрано меню с параметром String (.*)")
-    @Step("выбрано меню с параметром {def}")
+    @Step("выбрано меню с параметром {0}")
     public void chooseMenuItem(String def) {
         mainPage.chooseElement(def);
     }
 
     @Когда("выбрана валюта с параметром String (.*)")
-    @Step("выбрана валюта {def}")
+    @Step("выбрана валюта {0}")
     public void chooseCorrectCurrency(String def) {
         depositPage.chooseCurrency(def);
     }
 
     @Когда("введена сумма вклада (.*)")
-    @Step("введена сумма вклада {sum}")
+    @Step("введена сумма вклада {0}")
     public void fillSum(String sum) {
         depositPage.fillForm(depositPage.getInputAmount(),sum);
     }
 
     @Когда("выбран срок вклада (.*)")
-    @Step("выбран срок вклада {months}")
+    @Step("выбран срок вклада {0}")
     public void selectPeriod(String months) {
         depositPage.selectCorrectPeriod(months);
     }
 
 
     @Когда("введено ежемесячное пополнение (.*)")
-    @Step("введено ежемесячное пополнение {sum}")
+    @Step("введено ежемесячное пополнение {0}")
     public void getMonthlyPayment(String sum) {
         depositPage.fillForm(depositPage.getInputReplenish(),sum);
     }
@@ -57,25 +57,25 @@ public class ScenarioStepsOne {
     }
 
     @Тогда("проверяется процентная ставка с параметром (.*)")
-    @Step("проверяется процентная ставка с параметром {rate}")
+    @Step("проверяется процентная ставка с параметром {0}")
     public void checkRate(String rate) {
         depositPage.checkParameter(depositPage.getRate(),rate);
     }
 
     @Тогда("проверяется итоговая сумма к снятию (.*)")
-    @Step("проверяется итоговая сумма к снятию {totalSum}")
+    @Step("проверяется итоговая сумма к снятию {0}")
     public void checkTotalSum(String totalSum) {
         depositPage.checkParameter(depositPage.getResult(),totalSum);
     }
 
     @Тогда("проверяется пополнение (.*)")
-    @Step("проверяется пополнение {rep}")
+    @Step("проверяется пополнение {0}")
     public void checkReplenishment(String rep) {
         depositPage.checkParameter(depositPage.getReplenish(),rep);
     }
 
     @Тогда("проверяются начисленные проценты с параметром (.*)")
-    @Step("проверяются начисленные проценты с параметром {p}")
+    @Step("проверяются начисленные проценты с параметром {0}")
     public void checkEarned(String p) {
         depositPage.checkParameter(depositPage.getEarned(),p);
     }
